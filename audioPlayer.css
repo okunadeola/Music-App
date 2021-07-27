@@ -1,0 +1,214 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+  background-color: #caca;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+}
+#container {
+  width: 290px;
+  height: 550px;
+  background-color: #666;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  border: 5px solid rgb(182, 181, 180);
+}
+#header {
+  width: 200px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+#songInfo {
+  width: 200px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#imageContainer {
+  width: 200px;
+  height: 200px;
+  border: 2px solid rgb(196, 195, 194);
+  border-radius: 50%;
+}
+#imageContainer img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+#controls {
+  width: 190px;
+  height: 40px;
+  /* border: 2px solid rgb(184, 182, 180); */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4px;
+}
+button {
+  cursor: pointer;
+}
+#playBtn {
+  width: 50px;
+  height: 50px;
+  border: 3.5px solid rgb(194, 193, 193);
+  border-radius: 50%;
+  outline: none;
+}
+.fa-play,
+.fa-pause {
+  color: #333;
+  font-size: 18px;
+}
+.fa-forward,
+.fa-backward {
+  color: rgb(48, 47, 47);
+  font-size: 16px;
+  border: 0.5px solid rgb(194, 193, 193);
+  border-radius: 4px;
+  padding: 2px 4px;
+}
+#prevBtn,
+#nextBtn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 1px 2px;
+}
+
+#nextBtn:focus {
+  box-shadow: 0 0 8px #eef;
+}
+#prevBtn:focus {
+  box-shadow: 0 0 8px #eef;
+  outline: none;
+}
+#playBtn:focus {
+  box-shadow: 0 0 8px #eef;
+}
+.progress {
+  /* flex: 10; */
+  position: relative;
+  display: flex;
+  /* flex-basis: 10%; */
+  height: 5px;
+  width: 80%;
+  transition: height 0.3s;
+  background: rgba(139, 58, 58, 0.5);
+  cursor: ew-resize;
+}
+
+.progress__filled {
+  width: 1%;
+  background: #969592;
+  /* flex: 0;*/
+  flex-basis: 0%; 
+}
+input[type="range"] {
+  -webkit-appearance: none;
+  background: transparent;
+  width: 100%;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0 0 1px rgba(13, 13, 13, 0);
+  background: rgba(209, 201, 201, 0.8);
+  border-radius: 3px;
+  border: 0.2px solid rgba(1, 1, 1, 0);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  height: 12px;
+  width: 15px;
+  border-radius: 50px;
+  background: #333331;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -3.5px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+input[type="range"]:focus::-webkit-slider-runnable-track {
+  background: #c1a5c7;
+}
+
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0 0 1px rgba(13, 13, 13, 0);
+  background: rgba(209, 201, 201, 0.8);
+  border-radius: 1.3px;
+  border: 0.2px solid rgba(1, 1, 1, 0);
+}
+
+input[type="range"]::-moz-range-thumb {
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(13, 13, 13, 0);
+  height: 15px;
+  width: 15px;
+  border-radius: 50px;
+  background: #333331;
+  cursor: pointer;
+}
+#dance{
+  width: 100px;
+  background: #333;
+  height:40px;
+  display: flex;
+  align-items:flex-end;
+  justify-content: space-around;
+}
+.dance{
+  width: 10px;
+  background: rgb(211, 56, 56);
+  height:20px;
+  transition: height e;
+}
+.dance:first-child{
+  background: rgb(139, 228, 50);
+  animation: animate 2s ease-in-out infinite ;
+}
+.dance:last-child{
+  background: chartreuse;
+  animation: animate 1.4s ease-in-out infinite;
+}
+.dance:nth-child(even){
+  background: chartreuse;
+  animation: animate 1.5s  2s ease-in-out infinite;
+}
+
+
+@keyframes animate{
+  20%{
+    height:20px;
+  }
+  40%{
+    height:10px;
+  }
+  60%{
+    height:40px;
+  }
+  100%{
+    height:5px;
+  }
+}
